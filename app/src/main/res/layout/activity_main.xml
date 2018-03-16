@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_bottom_bg"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="居        民："
+            android:textColor="@color/color_text_caption"
+            android:textSize="@dimen/t16" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_bottom_bg"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="回收选项："
+            android:textColor="@color/color_text_caption"
+            android:textSize="@dimen/t16" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_bottom_bg"
+        android:padding="16dp"
+        android:text="获取积分："
+        android:textColor="@color/color_text_caption"
+        android:textSize="@dimen/t16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_bottom_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/all_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重量系数："
+            android:textColor="@color/color_text_caption"
+            android:textSize="@dimen/t16" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@null"
+            android:textColor="@color/color_text_caption"
+            android:textSize="@dimen/t16" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color_white"
+        android:padding="16dp"
+        android:text="照片"
+        android:textColor="@color/color_text_caption"
+        android:textSize="@dimen/t16" />
+
+</LinearLayout>
