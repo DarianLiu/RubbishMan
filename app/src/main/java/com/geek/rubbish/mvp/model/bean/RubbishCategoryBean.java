@@ -103,4 +103,9 @@ public class RubbishCategoryBean {
     public void setNewX(boolean newX) {
         this.newX = newX;
     }
+
+    @Override
+    public String toString() {
+        return getCategoryName();
+    }
 }
