@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -62,9 +64,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        if (mPresenter != null) {
-            mPresenter.rubbishCategory();
-        }
+        mPresenter.rubbishCategory();
     }
 
     @Override
@@ -73,11 +73,23 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                 R.layout.item_spinner, R.id.tv_name, categoryList);
         adapter.setDropDownViewResource(R.layout.item_spinner);
         spinnerCategory.setAdapter(adapter);
+        tvPoint.setText(MessageFormat.format("获取积分： +{0}", categoryList.get(
+                spinnerCategory.getSelectedItemPosition()).getPoint()));
 
-        spinnerCategory.setOnItemClickListener((parent, view, position, id) -> {
-            int point = categoryList.get(position).getPoint();
-            tvPoint.setText(MessageFormat.format("获取积分： +{0}", point));
+        spinnerCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int point = categoryList.get(position).getPoint();
+                tvPoint.setText(MessageFormat.format("获取积分： +{0}", point));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
         });
+
+
     }
 
     @Override

@@ -58,7 +58,7 @@ dependencies {
 //    compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["design"]
 //    compile rootProject.ext.dependencies["constraint-layout"]
-//    testCompile rootProject.ext.dependencies["junit"]
+    testCompile rootProject.ext.dependencies["junit"]
 
     compile rootProject.ext.dependencies["arms"]
 

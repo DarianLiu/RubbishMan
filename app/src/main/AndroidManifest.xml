@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.geek.rubbish">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,12 +13,18 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:allowBackup="true"
+        android:name="com.jess.arms.base.BaseApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- arms配置 -->
+        <meta-data
+            android:name="com.geek.rubbish.app.config.GlobalConfiguration"
+            android:value="ConfigModule" />
 
         <activity
             android:name=".mvp.module.mvp.ui.activity.MainActivity"
