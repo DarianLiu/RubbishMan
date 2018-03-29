@@ -32,5 +32,7 @@
 
     <!--列表间距颜色-->
     <color name="divider_color">#EDEDEF</color>
-
+    <color name="color_btn_red">#EB4443</color>
+    <color name="color_text_white">#ffffff</color>
+    <color name="color_btn_black">#000000</color>
 </resources>

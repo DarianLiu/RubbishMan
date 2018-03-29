@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Test</string>
+    <string name="rule_password">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`¬!"£$%^*()~=#{}[];':,./?/*-_+&#060;&#062;&#064;&#038;</string>
+    <!--Button Text-->
+    <string name="btn_login">登录</string>
+    <string name="title_login">登录</string>
+    <string name="btn_login_out">未登录</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_send_captcha">发送验证码</string>
+    <string name="btn_count_down">秒</string>
+    <string name="btn_resend">重新发送</string>
+    <string name="btn_next_step">下一步</string>
+    <string name="btn_sure">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_add_shopping_cart">加入购物车</string>
+    <string name="btn_pay">去结算</string>
+    <string name="btn_order_submit">提交订单</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_reduce">—</string>
+    <string name="btn_edit">编辑</string>
+    <string name="btn_delete">删除</string>
+
+    <!--Hint_Text-->
+    <string name="hint_mobile_number">手机号码</string>
+    <string name="hint_mobile_captcha">短信验证码</string>
+    <string name="hint_login_password">登录密码</string>
+    <string name="hint_password_old">旧密码</string>
+    <string name="hint_password_new">新密码</string>
+    <string name="hint_password_confirm">确认密码</string>
+    <string name="hint_username">用户名</string>
+    <string name="hint_account">用户名/手机号码</string>
+    <string name="hint_invitation_code">邀请码（选填、区分大小写）</string>
+    <string name="hint_say_something">说点什么&#8230;</string>
+    <string name="hint_invoice">请输入发票抬头&#8230;</string>
+    <string name="hint_order_memo">订单补充说明&#8230;</string>
+    <string name="hint_receiver_name">请输入收货人姓名</string>
+    <string name="hint_receiver_phone">请输入手机号码</string>
+    <string name="hint_receiver_area">请选择所在地区</string>
+    <string name="hint_receiver_address">请输入详细地址</string>
+    <string name="hint_receiver_postal_code">请输入邮政编码</string>
 </resources>
