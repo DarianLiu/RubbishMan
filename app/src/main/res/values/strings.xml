@@ -42,4 +42,5 @@
     <!--错误提示-->
     <string name="error_account_null">账号不能为空</string>
     <string name="error_password_null">密码不能为空</string>
+
 </resources>
