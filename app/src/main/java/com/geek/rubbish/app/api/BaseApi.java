@@ -16,5 +16,5 @@ public interface BaseApi {
      * @param md5Password MD5加密密码
      */
     @POST(APIs.API.login)
-    Observable<BaseResponse<UserBean>> login(@Query("mobile") String mobile, @Query("enPassword") String md5Password);
+    Observable<BaseResponse<UserBean>> login(@Query("mobile") String mobile, @Query("md5Password") String md5Password);
 }

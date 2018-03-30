@@ -3,7 +3,6 @@ package com.geek.rubbish.mvp.module.login.presenter;
 import android.app.Application;
 import android.util.Log;
 
-import com.geek.rubbish.common.utils.Constants;
 import com.geek.rubbish.common.utils.RxUtil;
 import com.geek.rubbish.mvp.module.login.contract.LoginContract;
 import com.geek.rubbish.storage.entity.UserBean;
@@ -11,7 +10,6 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
-import com.jess.arms.utils.DataHelper;
 
 import javax.inject.Inject;
 
@@ -45,6 +43,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
      * @param md5Password 密码
      */
     public void login(String account, String md5Password) {
+        Log.e(TAG, "====== account : " + account + "  md5Password: " + md5Password);
         mModel.login(account, md5Password)
                 .retryWhen(new RetryWithDelay(0, 30))
                 .compose(RxUtil.applySchedulers(mRootView))
@@ -60,6 +59,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
 
                     @Override
                     public void onError(@NonNull Throwable t) {
+                        super.onError(t);
                         Log.e("TAG", "====== onError");
                     }
                 });

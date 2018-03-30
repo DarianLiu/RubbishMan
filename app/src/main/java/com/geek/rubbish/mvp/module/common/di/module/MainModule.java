@@ -1,12 +1,12 @@
-package com.geek.rubbish.mvp.module.di.module;
+package com.geek.rubbish.mvp.module.common.di.module;
 
 import com.jess.arms.di.scope.ActivityScope;
 
 import dagger.Module;
 import dagger.Provides;
 
-import com.geek.rubbish.mvp.module.mvp.contract.MainContract;
-import com.geek.rubbish.mvp.module.mvp.model.MainModel;
+import com.geek.rubbish.mvp.module.common.contract.MainContract;
+import com.geek.rubbish.mvp.module.common.model.MainModel;
 
 
 @Module

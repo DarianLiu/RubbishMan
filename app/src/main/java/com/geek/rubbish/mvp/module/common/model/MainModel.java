@@ -1,4 +1,4 @@
-package com.geek.rubbish.mvp.module.mvp.model;
+package com.geek.rubbish.mvp.module.common.model;
 
 import android.app.Application;
 
@@ -6,7 +6,7 @@ import com.geek.rubbish.app.api.BaseService;
 import com.geek.rubbish.mvp.model.BaseArrayData;
 import com.geek.rubbish.mvp.model.BaseResponse;
 import com.geek.rubbish.mvp.model.bean.RubbishCategoryBean;
-import com.geek.rubbish.mvp.module.mvp.contract.MainContract;
+import com.geek.rubbish.mvp.module.common.contract.MainContract;
 import com.google.gson.Gson;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.integration.IRepositoryManager;

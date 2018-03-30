@@ -1,9 +1,9 @@
-package com.geek.rubbish.mvp.module.mvp.presenter;
+package com.geek.rubbish.mvp.module.common.presenter;
 
 import com.geek.rubbish.app.api.RxUtils;
 import com.geek.rubbish.mvp.model.BaseArrayData;
 import com.geek.rubbish.mvp.model.bean.RubbishCategoryBean;
-import com.geek.rubbish.mvp.module.mvp.contract.MainContract;
+import com.geek.rubbish.mvp.module.common.contract.MainContract;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;

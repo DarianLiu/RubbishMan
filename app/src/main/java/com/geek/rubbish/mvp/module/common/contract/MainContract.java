@@ -1,4 +1,4 @@
-package com.geek.rubbish.mvp.module.mvp.contract;
+package com.geek.rubbish.mvp.module.common.contract;
 
 import com.geek.rubbish.mvp.model.BaseArrayData;
 import com.geek.rubbish.mvp.model.BaseResponse;

@@ -1,4 +1,4 @@
-package com.geek.rubbish.mvp.module.mvp.ui.activity;
+package com.geek.rubbish.mvp.module.common.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import com.geek.rubbish.R;
 import com.geek.rubbish.mvp.model.bean.RubbishCategoryBean;
-import com.geek.rubbish.mvp.module.di.component.DaggerMainComponent;
-import com.geek.rubbish.mvp.module.di.module.MainModule;
-import com.geek.rubbish.mvp.module.mvp.contract.MainContract;
-import com.geek.rubbish.mvp.module.mvp.presenter.MainPresenter;
+import com.geek.rubbish.mvp.module.common.di.component.DaggerMainComponent;
+import com.geek.rubbish.mvp.module.common.di.module.MainModule;
+import com.geek.rubbish.mvp.module.common.contract.MainContract;
+import com.geek.rubbish.mvp.module.common.presenter.MainPresenter;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;

@@ -27,7 +27,7 @@
             android:value="ConfigModule" />
 
         <activity
-            android:name=".mvp.module.mvp.ui.activity.MainActivity"
+            android:name=".mvp.module.common.ui.activity.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
