@@ -1,9 +1,11 @@
 package com.geek.rubbish.mvp.module.login.presenter;
 
 import android.app.Application;
+import android.content.Intent;
 import android.util.Log;
 
 import com.geek.rubbish.common.utils.RxUtil;
+import com.geek.rubbish.mvp.module.common.ui.activity.MainActivity;
 import com.geek.rubbish.mvp.module.login.contract.LoginContract;
 import com.geek.rubbish.storage.entity.UserBean;
 import com.jess.arms.di.scope.ActivityScope;
@@ -55,6 +57,9 @@ public class LoginPresenter extends BasePresenter<LoginContract.Model, LoginCont
 //                        DataHelper.saveDeviceData(mAppManager.getTopActivity(), Constants.SP_USER_INFO, userBean);
                         Log.e(TAG, "====== onNext id: ");
                         //Log.e(TAG, "====== onNext id: "+userBean.getId());
+
+                        mRootView.launchActivity(new Intent(mAppManager.getTopActivity(), MainActivity.class));
+                        mRootView.killMyself();
                     }
 
                     @Override

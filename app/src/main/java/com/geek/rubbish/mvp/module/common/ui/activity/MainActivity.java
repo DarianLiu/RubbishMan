@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     public void initData(Bundle savedInstanceState) {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        tvToolbarTitle.setText("垃圾回收");
         mPresenter.rubbishCategory();
     }
 

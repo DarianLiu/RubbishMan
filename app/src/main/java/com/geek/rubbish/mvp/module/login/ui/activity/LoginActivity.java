@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.geek.rubbish.common.utils.StringUtils;
+import com.geek.rubbish.common.widget.dialog.CircleProgressDialog;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -47,6 +48,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     String error_account_null;
     @BindString(R.string.error_password_null)
     String error_password_null;
+
+    private CircleProgressDialog loadingDialog;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -125,12 +128,19 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void showLoading() {
-
+        if (loadingDialog == null) {
+            loadingDialog = new CircleProgressDialog.Builder(this).create();
+        }
+        if (!loadingDialog.isShowing()) {
+            loadingDialog.show();
+        }
     }
 
     @Override
     public void hideLoading() {
-
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+        }
     }
 
     @Override
