@@ -21,7 +21,7 @@ public class RubbishCategoryBean {
      * new : false
      */
 
-    private String id;
+    private int id;
     private long createDate;
     private long modifyDate;
     private int version;
@@ -32,11 +32,11 @@ public class RubbishCategoryBean {
     @SerializedName("new")
     private boolean newX;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

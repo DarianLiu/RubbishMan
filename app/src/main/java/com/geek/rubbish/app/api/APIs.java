@@ -14,7 +14,7 @@ public interface APIs {
     /**
      * 服务器IP地址
      */
-    String IP = RELEASE_VERSION ? "www.yanfumall.com" : "182.254.223.66"; //192.168.1.42  47.94.227.16
+    String IP = RELEASE_VERSION ? "www.yanfumall.com" : "182.254.223.66"; //192.168.1.42  47.94.227.16 182.254.223.66
 
     /**
      * 端口号
@@ -47,6 +47,11 @@ public interface APIs {
     interface API {
 
         /**
+         * 居民用户列表
+         */
+        String member_list = "member/listMemberByRank.jhtml";
+
+        /**
          * 垃圾分类
          */
         String rubbish_category = "rubbishcategory/listAll.jhtml";
@@ -54,5 +59,9 @@ public interface APIs {
          * 登录
          */
         String login = "member/rubbishManLogin.jhtml";
+        /**
+         * 保存垃圾回收
+         */
+        String rubbishRecycle_add = "rubbishRecycle/add.jhtml";
     }
 }

@@ -11,6 +11,7 @@ public class UserInfoBean implements Serializable {
     private int id;
     private String username;
     private String nickname;
+    private String trueName;
     private String usersign;
     private int usersex;
 
@@ -52,5 +53,18 @@ public class UserInfoBean implements Serializable {
 
     public void setUsersex(int usersex) {
         this.usersex = usersex;
+    }
+
+    public String getTrueName() {
+        return trueName;
+    }
+
+    public void setTrueName(String trueName) {
+        this.trueName = trueName;
+    }
+
+    @Override
+    public String toString() {
+        return getTrueName();
     }
 }

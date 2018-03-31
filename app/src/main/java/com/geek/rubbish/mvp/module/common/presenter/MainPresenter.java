@@ -4,6 +4,8 @@ import com.geek.rubbish.app.api.RxUtils;
 import com.geek.rubbish.mvp.model.BaseArrayData;
 import com.geek.rubbish.mvp.model.bean.RubbishCategoryBean;
 import com.geek.rubbish.mvp.module.common.contract.MainContract;
+import com.geek.rubbish.storage.entity.ResultBean;
+import com.geek.rubbish.storage.entity.UserInfoBean;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
@@ -29,16 +31,50 @@ public class MainPresenter extends BasePresenter<MainContract.Model, MainContrac
     }
 
     /**
+     * 获取居民用户列表
+     */
+    public void memberList(int memberRank) {
+        mModel.memberList(memberRank).retryWhen(new RetryWithDelay(0, 30))
+                .compose(RxUtils.applySchedulers(mRootView))
+                .compose(RxUtils.handleBaseResult(mAppManager.getTopActivity()))
+                .subscribeWith(new ErrorHandleSubscriber<BaseArrayData<UserInfoBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(@NonNull BaseArrayData<UserInfoBean> arrayData) {
+                        mRootView.updateMemberView(arrayData.getPageData());
+                    }
+                });
+    }
+
+    /**
      * 垃圾分类列表
      */
     public void rubbishCategory() {
-        mModel.rubbishCategory().retryWhen(new RetryWithDelay(3, 2))
+        mModel.rubbishCategory().retryWhen(new RetryWithDelay(0, 30))
                 .compose(RxUtils.applySchedulers(mRootView))
                 .compose(RxUtils.handleBaseResult(mAppManager.getTopActivity()))
                 .subscribeWith(new ErrorHandleSubscriber<BaseArrayData<RubbishCategoryBean>>(mErrorHandler) {
                     @Override
                     public void onNext(@NonNull BaseArrayData<RubbishCategoryBean> arrayData) {
                         mRootView.updateRubbishCategoryView(arrayData.getPageData());
+                    }
+                });
+    }
+
+    /**
+     * 保存垃圾回收信息
+     */
+    public void rubbishRecycleAdd(long memberId, int rubbishCategoryId, int weight, int point) {
+        mModel.rubbishRecycleAdd(memberId,rubbishCategoryId,weight,point).retryWhen(new RetryWithDelay(0, 30))
+                .compose(RxUtils.applySchedulers(mRootView))
+                .compose(RxUtils.handleBaseResult(mAppManager.getTopActivity()))
+                .subscribeWith(new ErrorHandleSubscriber<ResultBean>(mErrorHandler) {
+                    @Override
+                    public void onNext(@NonNull ResultBean r) {
+//                        if (r==1) {
+                            mRootView.showInfo("保存成功！");
+//                        } else {
+//                            mRootView.showInfo("保存失败，请重试！");
+//                        }
                     }
                 });
     }
